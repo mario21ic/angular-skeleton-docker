@@ -1,0 +1,12 @@
+version: "2"
+services:
+  angular:
+    build:
+      context: docker/
+    volumes:
+      - ./:/app
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+    ports:
+      - 4200:4200
+    command: ng serve --host 0.0.0.0 --port 4200
